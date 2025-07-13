@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Serai Tea - Minuman Herbal Segar Desa Giwangretno</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                </div>
+                <div>
+                    <div class="logo-text">Wedang<span>serai</span></div>
+                    <div class="slogan">Warung Amin</div>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.tiktok.com/@warungammin3?lang=id-ID" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61577971996973" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Stok Section -->
+    <section class="stok-section">
+        <div class="container">
+            <h3>Cek Stok Hari Ini</h3>
+            <p>Stok Cup Tersisa: <span id="stok-jumlah">10</span></p>
+            <input type="number" id="stok-input" min="0" placeholder="Update stok...">
+            <button onclick="updateStok()">Update Manual</button>
+        </div>  
+    </section>
+
+    <!-- Order Section -->
+    <section class="order">
+        <div class="container">
+            <div class="order-container">
+                <div class="order-header">
+                    <h2>Pesan Sekarang</h2>
+                    <p>Isi form berikut, kami akan antar ke rumahmu!</p>
+                </div>
+                <div class="order-body">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" class="form-control" placeholder="Paijem" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Ukuran Cup</label>
+                        <div class="option-group">
+                            <div class="option-btn" data-value="tangung" data-price="3000" onclick="selectOption(this, 'size')">Tanggung</div>
+                            <div class="option-btn" data-value="jumbo" data-price="5000" onclick="selectOption(this, 'size')">Jumbo</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rasa</label>
+                        <div class="option-group">
+                            <div class="option-btn" data-value="manis" onclick="selectOption(this, 'taste')">Manis</div>
+                            <div class="option-btn" data-value="tawar" onclick="selectOption(this, 'taste')">Tawar</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Varian</label>
+                        <div class="option-group">
+                            <div class="option-btn" data-value="es" onclick="selectOption(this, 'variant')">Es</div>
+                            <div class="option-btn" data-value="hangat" data-price="500" onclick="selectOption(this, 'variant')">Hangat</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity">Jumlah Cup <span id="info">(tuku 4 ongkir gratis)</span></label>
+                    <div class="quantity-wrapper">
+                        <button type="button" class="quantity-btn" onclick="updateQuantity(-1)">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="99" onchange="calculateTotal()">
+                        <button type="button" class="quantity-btn" onclick="updateQuantity(1)">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                    
+                    <div class="price-display">
+                        Total Harga: <span id="total-price">Rp 0</span>
+                    </div>
+                <button class="order-btn" onclick="showConfirmation()">Konfirmasi</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Confirmation Popup -->
+    <div class="confirmation-popup" id="confirmationPopup">
+        <div class="popup-backdrop" onclick="closePopup()"></div>
+        <div class="popup-container">
+            <div class="popup-header">
+                <h3>Konfirmasi Pesanan</h3>
+                <button class="close-btn" onclick="closePopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+            <div class="order-summary">
+                <h4>Detail Pesanan:</h4>
+                <div class="summary-item">
+                    <span>Nama:</span>
+                    <span id="summary-name"></span>
+                </div>
+                <div class="summary-item">
+                    <span>Ukuran Cup:</span>
+                    <span id="summary-size"></span>
+                </div>
+                <div class="summary-item">
+                    <span>Rasa:</span>
+                    <span id="summary-taste"></span>
+                </div>
+                <div class="summary-item">
+                    <span>Varian:</span>
+                    <span id="summary-variant"></span>
+                </div>
+                <div class="summary-item">
+                    <span>Jumlah:</span>
+                    <span id="summary-quantity"></span>
+                </div>
+                <div class="summary-item delivery">
+                    <span id="ongkos-kirim">Ongkos Kirim:</span>
+                    <span id="summary-delivery"></span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total Harga:</span>
+                    <span id="summary-total"></span>
+                </div>
+            </div>
+            </div>
+            <div class="popup-footer">
+                <button class="popup-btn cancel" onclick="closePopup()">Koreksi</button>
+                <button class="popup-btn confirm" onclick="sendOrder()">Kirim via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+    <script src="../script/order.js"></script>
+</body>
+</html>

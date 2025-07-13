@@ -1,0 +1,354 @@
+/* Features Section */
+.features {
+    padding: 60px 0;
+    background-color: #f3e4e0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background-color: var(--light);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px; /* Reduced the margin for closer spacing */
+    color: var(--text);
+    line-height: 1.2; /* Reduced line-height for smaller space between lines */
+    word-wrap: break-word; /* Ensures the text wraps correctly */
+    white-space: normal; /* Allows the text to break into multiple lines */
+}
+
+/* Menu Section */
+.menu {
+    padding: 60px 0;
+    background-color: #f8f4e9;
+}
+
+.section-title {
+    text-align: center; /* Untuk teks-nya */
+    margin: auto;
+}
+
+p {
+    text-align: justify;
+    padding-top: 25px;
+}
+
+
+.order-button {
+    background-color: var(--secondary);
+    color: var(--text);
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 30px;
+    margin: 20px 0;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.order-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    background-color: var(--light);
+}
+
+.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.menu-card:hover {
+    transform: scale(1.03);
+}
+
+.menu-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.menu-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.price {
+    font-size: 1.8rem;
+    color: var(--text);
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.price small {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.menu-details {
+    list-style: none;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.menu-details li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.menu-details li:last-child {
+    border-bottom: none;
+}
+
+/* Promo Section */
+.promo {
+    padding: 60px 0;
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+}
+
+.promo-card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+
+.promo-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+.promo-item {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.promo-item h3 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 0;
+    background-color: #f8f4e9;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 5rem;
+    color: rgba(237, 110, 75, 0.1);
+    font-family: serif;
+    line-height: 1;
+}
+
+.testimonial-text {
+    margin-bottom: 20px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+    text-align: justify;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.author-info h4 {
+    color: var(--primary);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: var(--secondary);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section p {
+    text-align: justify;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--secondary);
+}
+
+.contact-info {
+    list-style: none;
+}
+
+.contact-info li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.contact-icon {
+    color: var(--primary);
+    font-size: 1.2rem;
+    min-width: 20px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .feature-card {
+        padding: 20px;
+    }
+    
+    .menu-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .promo-card {
+        padding: 20px;
+    }
+    
+    .promo-title {
+        font-size: 1.5rem;
+    }
+}

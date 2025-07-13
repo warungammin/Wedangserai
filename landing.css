@@ -1,0 +1,143 @@
+:root {
+  --primary: #ed6e4b;
+  --text: #66613e;
+  --secondary: #fde129;
+  --light: #fff8f2;
+  --dark: #3a3428;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(assets/images/bg.png) center top no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: -20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers horizontally */
+  justify-content: center; /* Centers vertically */
+  gap: 10px;
+  padding-bottom: 20px; /* Add bottom padding for spacing */
+}
+
+.logo-text {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  padding-bottom: 0px;
+}
+
+span {
+  color: var(--secondary);
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+}
+
+.bold-harga {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 2rem; /* Set the font size for the price */
+  color: #ed6e4b; /* Example color for the price */
+}
+
+.bold-teks {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.3rem; /* Set the font size for the delivery text */
+  font-weight: bold;
+  color: #fde129; /* Example color for the delivery text */
+}
+
+.highlight-text {
+  background-color: var(--secondary);
+  color: var(--text);
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  margin: 20px 0;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-text:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background-color: #f9d700;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .highlight-text {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+}
+.hero-content {
+  /* Tambahkan properti ini */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.highlight-text {
+  /* Tambahkan warna teks */
+  color: var(--text) !important;
+}
